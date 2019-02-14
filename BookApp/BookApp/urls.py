@@ -3,6 +3,10 @@ Definition of urls for BookApp.
 """
 
 from django.conf.urls import include, url
+from BookApp import Home
+from BookApp.Home.views import index
+import BookApp
+from BookApp.Home import views
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -10,6 +14,8 @@ from django.conf.urls import include, url
 
 urlpatterns = [
     # Examples:
+     url(r'^$', Home.views.index, name='index'),
+     url(r'^home$', Home.views.index, name='home'),
     # url(r'^$', BookApp.views.home, name='home'),
     # url(r'^BookApp/', include('BookApp.BookApp.urls')),
 
